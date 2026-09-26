@@ -1,0 +1,13 @@
+{
+  "name": "code-review-helper-server",
+  "version": "1.0.0",
+  "description": "Backend for the Code Review Helper project - handles AI code review requests.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.4",
+    "express": "^4.19.2"
+  }
+}

@@ -13,14 +13,18 @@ i went with this project as it im looking to integrate AI into my projects more 
 
 # Tech stack
 - HTML/CSS/JavaScript (frontend)
-- Google Gemini API
+- Azure Foundry AI API
 
 # How to run it locally
 1. Clone this repo
-2. open 'index.html' from main and run in browser
+2. Get personal API key (preset for Azure Foundry API) and endpoint
+3. set up personal env file with endpoint and API
+4. run server using 'npm server' in the terminal while in server file ('cd server')
 
 # What I learned
-- API keys are stored in environment variables, not committed
+- How to send requests to AI in the backend, receving answers and displaying the answers on the frontend 
+
+- 
 
 # What's next
 
