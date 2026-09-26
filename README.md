@@ -17,6 +17,7 @@ i went with this project as it im looking to integrate AI into my projects more 
 
 # How to run it locally
 1. Clone this repo
+2. open 'index.html' from main and run in browser
 
 # What I learned
 - API keys are stored in environment variables, not committed
