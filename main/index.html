@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Review Helper</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    <header class="app-header">
+      <h1>Code Review Helper</h1> 
+      <p class="subtitle">Paste a code snippet and get AI feedback on it.</p>
+    </header>
+
+    <section class="input-section">
+      <div class="form-row">
+        <label for="language">Language</label>
+        <select id="language"> <!-- Added a dropdown for selecting programming language -->
+          <option value="javascript">JavaScript</option> 
+          <option value="python">Python</option>
+          <option value="java">Java</option>
+        </select>
+      </div>
+
+      <div class="form-row"> <!-- input box for code -->
+        <label for="code-input">Code</label>
+        <textarea id="code-input" rows="14" placeholder="Paste your code here..."></textarea> 
+      </div>
+
+      <button id="review-btn" type="button">Review Code</button>
+    </section>
+
+    <section class="results-section">
+      <h2>Feedback</h2>
+      <div id="results" class="results-box">
+        <p class="placeholder-text">Your review will appear here once you submit some code.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

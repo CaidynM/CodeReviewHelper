@@ -1,0 +1,142 @@
+/* Reset: browsers apply their own default margin/padding to elements,
+   which differs between browsers. Zeroing it out gives us a clean,
+   predictable starting point. box-sizing: border-box makes width/height
+   include padding and border, which is much more intuitive to work with. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base page styles. -apple-system/Segoe UI/Roboto is a common "use
+   whatever font looks native on this OS" stack. */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2937;
+  padding: 24px;
+}
+
+/* .app is the outer wrapper for the whole UI. Capping max-width and
+   centering it with margin: 0 auto keeps the layout readable on wide
+   screens instead of stretching edge to edge. */
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: #1f2937; /* dark gray, so it reads as secondary text */
+  font-size: 0.9rem;
+}
+
+/* Both the input card and the results card share this "white card with
+   a soft shadow" look, so we style them together with a comma-separated
+   selector instead of repeating the rules twice. */
+.input-section,
+.results-section {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/*Custom style for the dropdown select element to make it look more modern and consistent with the rest of the UI. */
+.form-row select {
+  appearance: none; /* Remove default styling */
+  background-color: #f9fafb; /* Light gray background */
+  border: 1px solid #d1d5db; /* Light gray border */
+  border-radius: 6px; /* Rounded corners */
+  padding: 8px 12px; /* Padding inside the select box */
+  font-size: 0.95rem; /* Font size */
+  color: #1f2937; /* Text color */
+  cursor: pointer; /* Pointer cursor on hover */
+  max-width: 125px; /* Limit the width of the dropdown */
+}
+
+.form-row select:hover { /* While hovering over the dropdown, change the border color to a slightly darker gray for visual feedback. */
+  border-color: #9ca3af; /* Darker gray border on hover */
+}
+
+
+/* Each label+input pair stacks vertically (label on top, field below). */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.form-row label {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: #1f2937;
+  font-weight: bold;
+}
+
+/* The code textarea uses a monospace font stack so pasted code keeps
+   its alignment/indentation, the way it would in a real editor. */
+#code-input {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.9rem;
+  resize: vertical; /* let the user drag it taller, but not wider */
+}
+
+#review-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+#review-btn:hover {
+  background-color: #1d4ed8; /* slightly darker blue on hover */
+}
+
+#review-btn:active {
+  background-color: #1e40af; /* even darker blue when clicked */
+}
+
+/* Used later (step 3+) while a review request is in flight, so the
+   button visibly can't be clicked again mid-request. */
+#review-btn:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.results-section h2 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+/* white-space: pre-wrap preserves line breaks in the AI's response
+   (so a multi-line review doesn't collapse onto one line) while still
+   wrapping long lines instead of overflowing the box. */
+.results-box {
+  min-height: 100px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.placeholder-text {
+  color: #9ca3af;
+  font-style: italic;
+}
